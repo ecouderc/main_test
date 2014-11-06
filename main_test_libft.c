@@ -6,7 +6,7 @@
 /*   By: acivita <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 16:38:12 by acivita           #+#    #+#             */
-/*   Updated: 2014/11/05 17:18:14 by acivita          ###   ########.fr       */
+/*   Updated: 2014/11/06 12:49:13 by acivita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -236,15 +236,19 @@ int		test_strlcat(void)
 {
 	char *s = "c est ";
 	char *s1 = "moi";
+	char *s_ = "c est ";
+	char *s1_ = "moi";
 	int i = 0;
 	size_t k;
 	size_t j;
 	char *target = malloc(strlen(s) + strlen(s1) + 1);
+	char *target_ = malloc(strlen(s) + strlen(s1) + 1);
 	strcpy(target, s);
+	strcpy(target_, s_);
 	while (i < 15)
 	{
 	k = ft_strlcat(target,s1,i);
-	j = strlcat(target,s1,i);
+	j = strlcat(target_,s1_,i);
 	if (k != j)
 		return (0);
 //	printf("%lu", k);
@@ -270,7 +274,7 @@ int		test_atoi(void)
 		{"42 32 "},
 		{"1-2"},
 		{"4+2 "},
-		{"  +442"},
+		{"	+442"},
 		{"  -4232 "},
 		{"4,5"},
 	};
